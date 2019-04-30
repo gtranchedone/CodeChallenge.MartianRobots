@@ -10,6 +10,7 @@ public struct Robot {
     }
     
     /// Return `false` if lost
+    @discardableResult
     public mutating func perform(_ instruction: RobotInstruction, on planet: Mars) -> Bool {
         orientation = instruction.orientation(from: orientation)
         let targetPosition = instruction.move(from: position, orientation: orientation)
