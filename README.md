@@ -14,7 +14,7 @@ Some things to note for the challenge reviewers:
 - I've used the latest Xcode version (10.2.1) to create the playground. Make sure you use the same to avoid problems.
 - My playground isn't highlighting the everything in the source code for the source files, only the playground pages. I'm not sure this problem only affects me or will affect you as well. I'm sorry if it does, I understand it isn't a great reading experience :(. On the bright side, you can open the playground in a text editor such as `VS Code` and you can get code highlighting there.
 - The playground doesn't give you code coverage, as it wasn't intended to be used this way. If I had more time, I'd move the code in a proper Xcode project to solve both this and the previous issue.
-- The project was small enough that I only created a git repository after the fact.
+- The project was small enough that I only created a git repository after the fact. However, there's a bit of history with me fixing some broken tests and adding missing tests.
 
 ## Challenge Details
 
