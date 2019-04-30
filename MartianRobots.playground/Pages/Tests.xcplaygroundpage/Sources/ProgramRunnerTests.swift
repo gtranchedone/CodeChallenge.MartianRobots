@@ -6,7 +6,7 @@ public class ProgramRunnerTests: XCTestCase {
     func test_invalidInput_tooFewParameters() throws {
         let input =
             """
-            0 0
+            5 3
             CLF
             """
         
@@ -138,7 +138,7 @@ public class ProgramRunnerTests: XCTestCase {
     func test_invalidRobotPosition_outOfPlanetStartingPosition() throws {
         let input =
             """
-            0 0
+            5 3
             -1 1 E
             RFRFRFRF
             3 2 N
@@ -157,7 +157,7 @@ public class ProgramRunnerTests: XCTestCase {
     func test_invalidRobotPosition_NAN() throws {
         let input =
             """
-            0 0
+            5 3
             A 1 E
             RFRFRFRF
             3 2 N
@@ -178,7 +178,7 @@ public class ProgramRunnerTests: XCTestCase {
     func test_invalidRobotInstructions_invalidCharacters() throws {
         let input =
             """
-            0 0
+            5 3
             1 1 E
             1CLF
             """

@@ -22,7 +22,7 @@ public class ProgramRunner {
             throw InputError.notEnoughParameters
         }
         
-        let mars = try makePlanet(from: inputs[0])
+        let planet = try makePlanet(from: inputs[0])
         
         var output = ""
         var robotInstructionIndex = 1
@@ -31,10 +31,10 @@ public class ProgramRunner {
             let initialPositionInstruction = inputs[robotInstructionIndex]
             let movementInstructions = inputs[robotInstructionIndex + 1]
             var robot = try makeRobot(from: initialPositionInstruction)
-            guard mars.contains(robot.position) else {
+            guard planet.contains(robot.position) else {
                 throw InputError.invalidRobotPosition
             }
-            let result = try perform(instructions: movementInstructions, on: mars, robot: &robot)
+            let result = try perform(instructions: movementInstructions, on: planet, robot: &robot)
             output.append("\(result)\n")
             
             robotInstructionIndex += 2
@@ -48,11 +48,13 @@ public class ProgramRunner {
         guard
             gridSizeComponents.count == 2,
             let gridWidth = Int(gridSizeComponents[0]),
-            let gridHeigth = Int(gridSizeComponents[1])
+            let gridHeight = Int(gridSizeComponents[1]),
+            gridWidth > 0,
+            gridHeight > 0
             else {
                 throw InputError.invalidGridSize
         }
-        return Mars(width: gridWidth, height: gridHeigth)
+        return Mars(width: gridWidth, height: gridHeight)
     }
     
     private func makeRobot(from input: String) throws -> Robot {
